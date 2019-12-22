@@ -1,0 +1,42 @@
+<html>
+   <title>Weather Station Details</title>
+    <center>
+       <head>
+          <font size="7">Weather Station details from South region of Brazil
+          </font>
+         </head>
+      </center>
+    <body>  
+       <p>
+         <font size="4"> <form id="form1" action="/" method="post">Select the Database  
+            <select name="Db_selector">
+                  <option value = "My SQL">My SQL</option>
+               <option value = "Mongo DB">Mongo DB</option>
+              
+            </select>
+            
+            <br>
+         </font>
+         </p>
+
+            <p>    
+            <font size="4">Select a station 
+                    <select name="Station_selector">
+                     
+                            <%  for(i in stations){ %>
+                       <option value = "<%= stations[i].wsid %>"><%= stations[i].wsid %></option>
+                       <%}%>
+
+                      
+                    </select>
+                    <br>
+                
+            </font>
+           </p>
+
+            <input type="submit" value="Submit" />
+         </form>
+
+
+    </body>
+   </html>

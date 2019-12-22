@@ -1,0 +1,69 @@
+<html><body>
+    <% if(DB=="My SQL"){ %>
+        <center><p> <font size="5">Data from MYSQL database -----> Time taken for retrieval in milli seconds: <%=time%></font></center></p>
+    <% }if(DB=="Mongo DB"){ %>
+    <center> <p> <font size="5">Data from Mongo DB -----> Time taken for retrieval in milli seconds: <%=time%></font></center></p>
+    <% }%>
+        <table border = "1">
+          
+                <tr>
+                   <th>Station_id</th>
+                   <th>name</th>
+                   <th>elvt</th>
+                   <th>lat</th>
+                   <th>lon</th>
+                   <th>Station_num</th>
+                   <th>city</th>
+                   <th>prov</th>
+                   <th>Observation_date</th>
+                   <th>prcp</th>
+                   <th>stp</th>
+                   <th>smax</th>
+                   <th>smin</th>
+                   <th>gbrd</th>
+                   <th>temp</th>
+                   <th>dewp</th>
+                   <th>tmax</th>
+                   <th>dmax</th>
+                   <th>tmin</th>
+                   <th>dmin</th>
+                   <th>hmdy</th>
+                   <th>hmax</th>
+                   <th>hmin</th>
+                   <th>wdsp</th>
+                   <th>wdct</th>
+                   <th>gust</th>            
+                </tr>
+                <% for(i in data){ %>
+                <tr>
+                   <td><%= data[i].wsid %></td>
+                   <td><%= data[i].wsnm %></td>
+                   <td><%= data[i].elvt %></td>
+                   <td><%= data[i].lat %></td>
+                   <td><%= data[i].lon %></td>
+                   <td><%= data[i].inme %></td>
+                   <td><%= data[i].city %></td>
+                   <td><%= data[i].prov %></td>
+                   <td><%= data[i].mdct %></td>
+                   <td><%= data[i].prcp %></td>
+                   <td><%= data[i].stp %></td>
+                   <td><%= data[i].smax %></td>
+                   <td><%= data[i].smin %></td>
+                   <td><%= Number(data[i].gbrd).toFixed(2) %></td>
+                   <td><%= data[i].temp %></td>
+                   <td><%= data[i].dewp %></td>
+                   <td><%= data[i].tmax %></td>
+                   <td><%= data[i].dmax %></td>
+                   <td><%= data[i].tmin %></td>
+                   <td><%= data[i].dmin %></td>
+                   <td><%= data[i].hmdy %></td>
+                   <td><%= data[i].hmax %></td>
+                   <td><%= data[i].hmin %></td>
+                   <td><%= data[i].wdsp %></td>
+                   <td><%= data[i].wdct %></td>
+                   <td><%= data[i].gust %></td>
+                </tr>
+                <%}%>
+
+             </table>
+</body></html>
